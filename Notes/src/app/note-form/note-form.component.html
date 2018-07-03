@@ -1,0 +1,25 @@
+<form #noteForm="ngForm">
+  <div>
+    <label>
+      Note
+    </label>
+    <select name="update" [(ngModel)]="search">
+      <option *ngFor="let note of notes.notes" [value]="note.title">{{note.title}}</option>
+    </select>
+  </div>
+  <div>
+    <label>
+      Title
+    </label>
+    <input type="text" name="title" [(ngModel)]="note.title" required>
+  </div>
+  <div>
+    <label>
+      Text
+    </label>
+    <input type="text" name="text" [(ngModel)]="note.text" required>
+  </div>
+  <button type="submit" *ngIf="!search" (click)="save()">Save</button>
+  <button type="submit" *ngIf="search" (click)="update()">Update</button>
+  <button type="submit" *ngIf="search" (click)="delete()">Delete</button>
+</form>

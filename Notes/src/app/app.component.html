@@ -1,0 +1,58 @@
+<header class="header sticky">
+  <div class="header__button">
+    <a href="#List" class="header__button__list">List</a>
+  </div>
+  <div class="header__button">
+    <a href="#Insert" class="header__button__insert">Insert</a>
+  </div>
+  <div class="header__button">
+    <a href="#Update" class="header__button__update">Update</a>
+  </div>
+  <div class="header__button">
+    <a href="#Delete" class="header__button__delete">Delete</a>
+  </div>
+  <div class="header__search">
+    <input class="header__search__input" type="text" placeholder="Searchbox">
+    <button class="header__search__button">
+      <img src="../assets/magnifying-glass.svg" alt="Search">
+    </button>
+  </div>
+</header>
+<div id="List" class="content">
+  <div class="content__title">
+    <img src="../assets/notes.svg" alt="note">
+    <h2>Note List</h2>
+  </div>
+  <div class="card" *ngFor="let note of notes">
+    <div class="card__title">
+      <div class="title">{{note.title}}</div>
+      <div class="card__title__date">
+        {{note.date}}
+      </div>
+    </div>
+    <div class="card__text">
+      {{note.text}}
+    </div>
+  </div>
+</div>
+<div id="Insert" class="content">
+  <div class="content__title">
+    <img src="../assets/notes.svg" alt="note">
+    <h2>Insert Note</h2>
+  </div>
+  <app-note-form></app-note-form>
+</div>
+<div id="Update" class="content">
+  <div class="content__title">
+    <img src="../assets/notes.svg" alt="note">
+    <h2>Update Note</h2>
+  </div>
+  <app-note-form></app-note-form>
+</div>
+<div id="Delete" class="content">
+  <div class="content__title">
+    <img src="../assets/notes.svg" alt="note">
+    <h2>Delete Note</h2>
+  </div>
+  <app-note-form></app-note-form>
+</div>
